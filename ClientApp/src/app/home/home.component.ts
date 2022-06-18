@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  character: string = 'Character Name';
+  //character: string = 'Character Name';
+  charList = [
+    'faenking',
+    'heinen',
+    'kaladin',
+    'magdar',
+    'torinn',
+    'yaris'
+  ];
 }
