@@ -1,6 +1,20 @@
-<div class="container">
-  <h1>{{ character}}</h1>
-  <p>Weapons:</p>
-  <p>Armor:</p>
-  <p>Accessories:</p>
-</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Faen King">
+    <app-character [selectedCharacter]="'faenking'"></app-character>
+  </mat-tab>
+  <mat-tab label="Heinen">
+    <app-character [selectedCharacter]="'heinen'"></app-character>
+  </mat-tab>
+  <mat-tab label="Kaladin">
+    <app-character [selectedCharacter]="'kaladin'"></app-character>
+  </mat-tab>
+  <mat-tab label="Magdar">
+    <app-character [selectedCharacter]="'magdar'"></app-character>
+  </mat-tab>
+  <mat-tab label="Torinn">
+    <app-character [selectedCharacter]="'torinn'"></app-character>
+  </mat-tab>
+  <mat-tab label="Yaris">
+    <app-character [selectedCharacter]="'yaris'"></app-character>
+  </mat-tab>
+</mat-tab-group>
