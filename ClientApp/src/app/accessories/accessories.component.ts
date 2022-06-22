@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataHandlerService } from '../services/data-handler.service';
 
 @Component({
   selector: 'app-accessories',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccessoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataHandlerService: DataHandlerService) { }
+
+  @Input() character: string;
+  accessoriesList: any;
 
   ngOnInit(): void {
+    this.populateAccessoriesList(this.character);
   }
 
+  populateAccessoriesList(char: string) {
+    this.dataHandlerService.getAccessories(char).subscribe((response: any) => {
+      this.accessoriesList = response;
+    });
+  }
 }

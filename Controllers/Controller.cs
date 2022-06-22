@@ -2,22 +2,31 @@
 
 namespace DnD_Inventory.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/controller")]
     [ApiController]
     public class Controller : ControllerBase
     {
-        // GET: api/<Controller>
-        [HttpGet("get-all")]
-        public IEnumerable<string> GetAllInventory()
+        // Temporary sample data
+        private List<string> Weapons = new List<string> { "Black Razor", "Heaven's Edge", "Dragon-Kindled Bonesword" };
+        private List<string> Accessories = new List<string> { "Necklace of Blue Health", "Ring of Feather Fall", "Ring of Enlarge" };
+        private List<string> Armor = new List<string> { "Half-Plate of the Elves", "Red Scale Cloak of Brimstone", "Boots of Leaping" };
+
+        [HttpGet("get-weapons/{character}")]
+        public IEnumerable<string> GetWeapons(string character)
         {
-            return new string[] {  };
+            return Weapons;
         }
 
-        // GET api/<Controller>/character
-        [HttpGet("{character}")]
-        public string GetCharacterInventory(string character)
+        [HttpGet("get-armor/{character}")]
+        public IEnumerable<string> GetArmor(string character)
         {
-            return "value";
+            return Armor;
+        }
+
+        [HttpGet("get-accessories/{character}")]
+        public IEnumerable<string> GetAccessories(string character)
+        {
+            return Accessories;
         }
 
         // POST api/<Controller>/add-weapon

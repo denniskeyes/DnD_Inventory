@@ -1,5 +1,7 @@
 <div class="container inventory-layout">
-  <app-weapons></app-weapons>
-  <app-armor></app-armor>
-  <app-accessories></app-accessories>
+  <mat-accordion>
+    <app-weapons [character]="selectedCharacter"></app-weapons>
+    <app-armor [character]="selectedCharacter"></app-armor>
+    <app-accessories [character]="selectedCharacter"></app-accessories>
+  </mat-accordion>
 </div>

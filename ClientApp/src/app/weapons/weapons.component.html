@@ -1,1 +1,28 @@
-<h1>WEAPONS</h1>
+<!--Weapons list container-->
+<mat-expansion-panel hideToggle class="weapons-panel">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Weapons
+    </mat-panel-title>
+    <mat-panel-description>
+      Click to display {{ character }}'s weapons
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <button mat-button type="button" class="btn-add-new">Add new</button>
+
+  <!--Weapons list with expandable element for each item-->
+  <mat-expansion-panel *ngFor="let weapon of weaponsList" class="weapons-list">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ weapon }}
+      </mat-panel-title>  
+      <mat-panel-description>
+        Weapon description
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!--Weapon attributes/stats-->
+
+  </mat-expansion-panel>
+</mat-expansion-panel>

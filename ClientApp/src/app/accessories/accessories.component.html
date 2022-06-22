@@ -1,1 +1,28 @@
-<h1>ACCESSORIES</h1>
+<!-- Armor list container -->
+<mat-expansion-panel hideToggle class="accessories-panel">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Accessories
+    </mat-panel-title>
+    <mat-panel-description>
+      Click to display {{ character }}'s accessories
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <button mat-button type="button" class="btn-add-new">Add new</button>
+
+  <!--Armor list with expandable element for each item-->
+  <mat-expansion-panel *ngFor="let accessory of accessoriesList" class="accessories-list">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ accessory }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Accessory description
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!--Armor attributes/stats-->
+
+  </mat-expansion-panel>
+</mat-expansion-panel>

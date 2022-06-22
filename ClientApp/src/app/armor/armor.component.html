@@ -1,1 +1,28 @@
-<h1>ARMOR</h1>
+<!-- Armor list container -->
+<mat-expansion-panel hideToggle class="armor-panel">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Armor
+    </mat-panel-title>
+    <mat-panel-description>
+      Click to display {{ character }}'s armor
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <button mat-button type="button" class="btn-add-new">Add new</button>
+
+  <!--Armor list with expandable element for each item-->
+  <mat-expansion-panel *ngFor="let armor of armorList" class="armor-list">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ armor }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Weapon description
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!--Armor attributes/stats-->
+
+  </mat-expansion-panel>
+</mat-expansion-panel>
