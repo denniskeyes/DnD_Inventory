@@ -15,7 +15,7 @@
   <mat-expansion-panel *ngFor="let accessory of accessoriesList" class="accessories-list">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ accessory }}
+        {{ accessory.name }}
       </mat-panel-title>
       <mat-panel-description>
         Accessory description
@@ -23,6 +23,7 @@
     </mat-expansion-panel-header>
 
     <!--Armor attributes/stats-->
+    {{ accessory?.description }}
 
   </mat-expansion-panel>
 </mat-expansion-panel>

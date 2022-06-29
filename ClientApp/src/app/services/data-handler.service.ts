@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IGear } from '../interfaces/IGear';
+import { IWeapon } from '../interfaces/IWeapon';
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +14,18 @@ export class DataHandlerService {
   options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }; 
 
   // Get weapons for given character
-  getWeapons(character: string): Observable<Array<string>> {
-    return this.http.get<Array<string>>(`./api/controller/get-weapons/{character}`);
+  getWeapons(character: string): Observable<Array<IWeapon>> {
+    return this.http.get<Array<IWeapon>>(`./api/controller/get-weapons/{character}`);
   }
 
   // Get armor for given character
-  getArmor(character: string): Observable<Array<string>> {
-    return this.http.get<Array<string>>(`./api/controller/get-armor/{character}`);
+  getArmor(character: string): Observable<Array<IGear>> {
+    return this.http.get<Array<IGear>>(`./api/controller/get-armor/{character}`);
   }
 
   // Get accessories for given character
-  getAccessories(character: string): Observable<Array<string>> {
-    return this.http.get<Array<string>>(`./api/controller/get-accessories/{character}`);
+  getAccessories(character: string): Observable<Array<IGear>> {
+    return this.http.get<Array<IGear>>(`./api/controller/get-accessories/{character}`);
   }
 
   // Save/update weapon for given character

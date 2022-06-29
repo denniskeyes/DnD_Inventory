@@ -4,8 +4,8 @@
     {
         public string Name { get; set; }
         public Attack? Attack { get; set; }
-        public Damage? Dmg1 { get; set; }
-        public Damage? Dmg2 { get; set; }
+        public Damage? Damage1 { get; set; }
+        public Damage? Damage2 { get; set; }
         public string? SavingThrow { get; set; }
         public string? SavingThrowDc { get; set; }
         public string? SaveEffect { get; set; }

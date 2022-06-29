@@ -15,14 +15,44 @@
   <mat-expansion-panel *ngFor="let weapon of weaponsList" class="weapons-list">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ weapon }}
-      </mat-panel-title>  
+        {{ weapon.name }}
+      </mat-panel-title>
       <mat-panel-description>
-        Weapon description
+        {{ weapon.description }}
       </mat-panel-description>
     </mat-expansion-panel-header>
 
     <!--Weapon attributes/stats-->
-
+    <div *ngIf="weapon?.attack">
+      <div><strong>Attack Info</strong></div>
+      <div>Type: {{ weapon?.attack?.type }}</div>
+      <div>Modifier: {{ weapon?.attack?.modifier }}</div>
+      <div>Proficient: {{ weapon?.attack?.proficient }}</div>
+      <div>Range: {{ weapon?.attack?.range }}</div>
+      <div>Magic Bonus: {{ weapon?.attack?.magicBonus }}</div>
+      <div>Crit Range: {{ weapon?.attack?.critRange }}</div>
+      <br />
+    </div>
+    <div *ngIf="weapon?.damage1">
+      <div><strong>Damage 1</strong></div>
+      <div>Damage Roll: {{ weapon?.damage1?.dmgRoll }}</div>
+      <div>Modifier Type: {{ weapon?.damage1?.dmgModType }}</div>
+      <div>Extra Damage: {{ weapon?.damage1?.dmgExtra }}</div>
+      <div>Type: {{ weapon?.damage1?.type }}</div>
+      <div>Crit Value: {{ weapon?.damage1?.critVal }}</div>
+      <br />
+    </div>
+    <div *ngIf="weapon?.damage2">
+      <div><strong>Damage 2</strong></div>
+      <div>Damage Roll: {{ weapon?.damage2?.dmgRoll }}</div>
+      <div>Modifier Type: {{ weapon?.damage2?.dmgModType }}</div>
+      <div>Extra Damage: {{ weapon?.damage2?.dmgExtra }}</div>
+      <div>Type: {{ weapon?.damage2?.type }}</div>
+      <div>Crit Value: {{ weapon?.damage2?.critVal }}</div>
+      <br />
+    </div>
+    <div>Saving Throw: {{ weapon?.savingThrow }}</div>
+    <div>Saving Throw DC: {{ weapon?.savingThrowDc }}</div>
+    <div>Saving Effect: {{ weapon?.saveEffect }}</div>
   </mat-expansion-panel>
 </mat-expansion-panel>

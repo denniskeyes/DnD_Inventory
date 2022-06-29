@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IGear } from '../interfaces/IGear';
 import { DataHandlerService } from '../services/data-handler.service';
 
 @Component({
@@ -11,14 +12,14 @@ export class ArmorComponent implements OnInit {
   constructor(private dataHandlerService: DataHandlerService) { }
 
   @Input() character: string;
-  armorList: any;
+  armorList: Array<IGear>;
 
   ngOnInit(): void {
     this.populateArmorList(this.character);
   }
 
   populateArmorList(char: string) {
-    this.dataHandlerService.getArmor(char).subscribe((response: any) => {
+    this.dataHandlerService.getArmor(char).subscribe((response: Array<IGear>) => {
       this.armorList = response;
     });
   }
